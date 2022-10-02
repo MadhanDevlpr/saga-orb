@@ -20,6 +20,20 @@ body
     position: absolute;
     top:0%;
     right:-25%;
+    opacity: 1;
+    animation-name: fade;
+    animation-duration :2s;
+}
+@keyframes fade{
+    from {
+        opacity: 0;
+        top:100%;
+        right:-100%;
+    }
+    to{
+        opacity: 1;
+        position: normal;
+    }
 }
 .header .text{
     align-items: center;
@@ -31,6 +45,8 @@ body
     top:45%;
     left:30%;
     transform: translate(-50%,-50%);
+    animation-name: fade;
+    animation-duration :2s;
 }
 .header h1{
     font-size: 10vw;
@@ -54,63 +70,55 @@ body
 .header h3 span{
     color: #fd3333;
 }
-.header #cz{
-    position: absolute;
-    top:30%;
-    left:60%;
-    transform: translate(-50%,-50%);
-    color: #000;
-    background:#fff;
-    padding:5px;
-    border-radius: 5px;
+.header .create{
+    color: aqua;
+    border: 2px solid aqua;
+    margin-top: 30px;
+    padding:15px 25px;
+    border-radius:10px;
     text-decoration: none;
+    transition: .5s;
+}
+.header .create:hover{
+    border-color: #fd3333;
+    padding:15px 30px;
 }
 .header .links{
     position: absolute;
     top:7.5%;
     right:0%;
     transform: translate(-5%,-50%);
+    animation-name: fade;
+    animation-duration :2s;
 }
 .header .links a{
     margin:30px;
-    border: 2px solid #fff;
+    border: 2px solid aqua;
     padding:10px 20px;
-    color: #fff;
+    color: aqua;
     text-decoration: none;
     border-radius: 10px;
     transition: .5s;
 }
+.header .links .sign_up{
+    border-color: #fd3333;
+    color: #fd3333;
+}
+.header .links .sign_up:hover{
+    background: #fd3333;
+    color: #000;
+}
 .header .links a:hover{
     color:#000;
-    background:#fff;
+    background:aqua;
     margin-bottom: 5px;
 }
-.customize{
+.header .new_orb{
+    width:100vw;
+    height:100vh;
     position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    background:white;
-    padding:30px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    visibility: hidden;
+    top:0;
 }
-
-.customize input{
-    margin-bottom: 30px;
-    width:30px;
-    height:30px;
-    border:none;
-    outline: none;
-    border-radius: 10px;
-}
-
-
 @media (max-width:1200px){
 
 .header .webgl

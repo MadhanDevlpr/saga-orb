@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 //Loading
+// Home Page Orb
 const textureLoader = new THREE.TextureLoader()
 // Debug
 
@@ -32,13 +33,16 @@ scene.add(sphere)
 
 
 const pointLight = new THREE.PointLight(0xff3636, 1)
-
+pointLight.position.x = 0
+pointLight.position.y = -10
+        
 pointLight.position.z = -8
 pointLight.intensity = 10
 scene.add(pointLight)
 
 const pointLight2 = new THREE.PointLight(0x2bd2f0, 1)
-
+pointLight2.position.x = 0
+pointLight2.position.y = 10
 pointLight2.position.z = -8
 pointLight2.intensity = 10
 scene.add(pointLight2)
@@ -113,21 +117,14 @@ const windowHalfY = window.innerHeight / 2
 const onDocumentMouseMove = (event) => {
     mouseX = (event.clientX - windowHalfX)
     mouseY = (event.clientY - windowHalfY)
-    if ((mouseX <= 4 || mouseX >= -4) && (mouseY <= 4 || mouseY >= -4)){
-        pointLight.position.x = -mouseY * 0.1
-        pointLight.position.y = mouseX * 0.1
-        pointLight2.position.x = mouseY * 0.1
-        pointLight2.position.y = -mouseX * 0.1
-        camera.position.x = mouseX * 0.0001
-        camera.position.y = mouseY * 0.0001
-        camera.position.z = 2
-    }
-    else{
-        pointLight.position.x = 0
-        pointLight.position.y = -10
-        pointLight2.position.x = 0
-        pointLight2.position.y = 10
-    }
+    pointLight.position.x = mouseY
+    pointLight.position.y = -mouseX
+    pointLight2.position.x = -mouseY
+    pointLight2.position.y = mouseX
+    camera.position.x = mouseX * 0.0001
+    camera.position.y = mouseY * 0.0001
+    camera.position.z = 2
+    
 }
 document.addEventListener('mousemove', onDocumentMouseMove)
 
@@ -143,6 +140,7 @@ const tick = () =>
     sphere.rotation.y = .5 * elapsedTime
     sphere.rotation.y += .5 * (targetX - sphere.rotation.y)
     sphere.rotation.x += .5 * (targetY - sphere.rotation.x)
+    
     // Update Orbital Controls
     // controls.update()
 
@@ -154,3 +152,4 @@ const tick = () =>
 }
 
 tick()
+
