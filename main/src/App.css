@@ -87,6 +87,10 @@ html{
   left:60%;
   transform: translate(-50%,-50%);
 }
+.doc h1, .doc p, .doc a{
+  color:orange;
+  text-align: center;
+}
 @keyframes fallin {
   from {
     opacity: 0;
@@ -126,5 +130,32 @@ html{
   100% {
       -webkit-transform: translate3d(85px, 0, 0);
               transform: translate3d(85px, 0, 0);
+  }
+}
+
+@media (max-width:1500px){
+  .App-logo{
+    visibility: hidden;
+  }
+  .App-header h1{
+    top:35%;
+    left:50%;
+    font-size: 15vw;
+  }
+  .App-header p{
+    top:55%;
+    left:50%;
+  }
+  .btnone, .btnone:hover{
+    top:70%;
+    left:50%;
+    font-size:20px;
+    padding:10px;
+  }
+  .btntwo, .btntwo:hover{
+    top:80%;
+    left:50%;
+    font-size:20px;
+    padding:10px;
   }
 }
