@@ -7,13 +7,12 @@ export default function Header() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Saga Orb</h1>
         <p>A visionary to reform the society in an absolute interactive way.</p>
+        <a class="new" href="/orb">Create Orb</a>
         <a className="btn btnone" href="https://github.com/MadhanDevlpr/saga-orb" target="_blank">
             Contribute
-           
         </a>
         <a className="btn btntwo" href="/docs">
             Documentation
-           
         </a>
       </header>
   )

@@ -56,6 +56,25 @@ html{
   filter: brightness(200%);
   text-align: center;
 }
+.new{
+  text-decoration: none;
+  border: 2px solid orange;
+  padding: 0px 0px 0px 0px;
+  color:orange;
+  font-weight: 900;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: .5s;
+  position: absolute;
+  top:75%;
+  left:70%;
+  transform: translate(-50%,-50%);
+}
+.new:hover{
+  background:orange;
+  color:black
+}
 .btn{
   text-decoration: none;
   border: 2px solid orange;
@@ -71,19 +90,19 @@ html{
   color:black;
   top:50%;
   left:50%;
-  padding:12vw 100vh;
+  padding:15vw 100vh;
   font-size: 10vw;
   border-radius: 0px;
 }
 .btnone{
   position: absolute;
-  top:85%;
+  top:90%;
   left:40%;
   transform: translate(-50%,-50%);
 }
 .btntwo{
   position: absolute;
-  top:85%;
+  top:90%;
   left:60%;
   transform: translate(-50%,-50%);
 }
